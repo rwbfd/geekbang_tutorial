@@ -15,8 +15,9 @@ docker images
 # Deploy containers using yaml
 kubectl apply -f deployment.yaml
 kubectl get deployments
+kubectl get pods
 
-# Deploy using commandline
+# Deploy using command line (with few arguments)
 # kubectl create deployment hello-gke --image=gcr.io/geekbang-gke/hello-gke:latest
 
 gcloud container clusters delete geekbang-cluster
