@@ -12,4 +12,11 @@ cd geekbang_tutorial/geek_tutorial/k8s-simple/docker
 gcloud builds submit -t gcr.io/geekbang-gke/hello-gke .
 docker images
 
+# Deploy containers using yaml
+kubectl apply -f deployment.yaml
+kubectl get deployments
+
+# Deploy using commandline
+# kubectl create deployment hello-gke --image=gcr.io/geekbang-gke/hello-gke:latest
+
 gcloud container clusters delete geekbang-cluster
