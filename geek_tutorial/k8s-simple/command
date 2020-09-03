@@ -20,4 +20,13 @@ kubectl get pods
 # Deploy using command line (with few arguments)
 # kubectl create deployment hello-gke --image=gcr.io/geekbang-gke/hello-gke:latest
 
+# Deploy a service
+kubectl apply -f service.yaml
+kubectl get services
+
+# Deploy using command line 
+# kubectl expose deployment hello-gke --name=hello-gke --type=LoadBalancer --port 5000 --target-port 5000
+
+kubectl delete service hello-gke
+kubectl delete deployment hello-gke
 gcloud container clusters delete geekbang-cluster
