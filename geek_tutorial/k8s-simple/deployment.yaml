@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello
+      app: hello-gke
   template:
     metadata:
       labels:
-        app: hello
+        app: hello-gke
     spec:
       containers:
       - name: hello-gke
@@ -19,11 +19,11 @@ spec:
         image: gcr.io/$GCLOUD_PROJECT/hello-gke:latest
         # This app listens on port 8080 for web traffic by default.
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
         # Some Environment variables of this server
         env:
           - name: PORT
-            value: "8080"
+            value: "5000"
         resources:
         # The resources needing of this app
            requests:
