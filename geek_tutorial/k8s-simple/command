@@ -1,0 +1,13 @@
+## Create the clusters
+
+gcloud projects list
+gcloud config set project geekbang-gke
+gcloud config set comput/zone us-central1-a
+gcloud container clusters create geekbang-cluster --num-nodes=2 --enable-autoscaling --max-nodes=3 --min-nodes=1
+
+## Build the docker image
+git clone https://github.com/rwbfd/geekbang_tutorial.git
+cd geekbang_tutorial/geek_tutorial/k8s-simple/docker
+gcloud builds submit -t gcr.io/geekbang-gke/hello-gke .
+docker images
+
