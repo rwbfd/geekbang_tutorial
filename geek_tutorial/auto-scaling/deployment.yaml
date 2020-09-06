@@ -17,10 +17,10 @@ spec:
         image: gcr.io/geekbang-gke/hello-gke:latest
         ports:
         - containerPort: 5000
-        resources:
-           requests:
-             memory: "128Mi"
-             cpu: "200m"
+#         resources:
+#            requests:
+#              memory: "128Mi"
+#              cpu: "200m"
 #            limits:
 #              memory: "256Mi"
 #              cpu: "500m"
