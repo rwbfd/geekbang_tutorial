@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: hello-gke
 spec:
-  # The replicas num means how many the replicated service you want to run.
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: hello-gke
@@ -18,18 +17,3 @@ spec:
         image: gcr.io/geekbang-gke/hello-gke:latest
         ports:
         - containerPort: 5000
-        # Some Environment variables of this server
-        env:
-          - name: PORT
-            value: "5000"
-        resources:
-        # The resources needing of this app
-           requests:
-             #memory resources are defined in bytes. Normally, you give a mebibyte value for memory.
-             memory: "128Mi"
-             # CPU resource is defined in millicores. if you container needs 2 full cores, you would put the value 2000m
-             cpu: "200m"
-           limits:
-             # The max resources of this app using 
-             memory: "256Mi"
-             cpu: "500m"
