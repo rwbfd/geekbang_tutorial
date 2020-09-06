@@ -3,7 +3,7 @@
 gcloud projects list
 gcloud config set project geekbang-gke
 gcloud config set compute/zone us-central1-a
-gcloud container clusters create geekbang-cluster --num-nodes=2 --enable-autoscaling --max-nodes=3 --min-nodes=1
+gcloud container clusters create geekbang-cluster --num-nodes=2 --enable-autoscaling --max-nodes=3 --min-nodes=1 --enable-vertical-pod-autoscaling --cluster-version=1.14.7
 #Set cluster gcloud config set container/cluster geekbang-cluster
 
 ## Build the docker image
