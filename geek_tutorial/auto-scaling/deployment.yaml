@@ -1,9 +1,9 @@
-apiVersion: extensions/v1beta1
+apiVersion: app/v1
 kind: Deployment
 metadata:
   name: hello-gke
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: hello-gke
