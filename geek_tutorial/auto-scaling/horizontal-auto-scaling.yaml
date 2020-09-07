@@ -4,7 +4,7 @@ metadata:
   name: nginx
 spec:
   scaleTargetRef:
-    apiVersion: extensions/v1beta1
+    apiVersion: app/v1
     kind: Deployment
     name: hello-gke
   minReplicas: 1
