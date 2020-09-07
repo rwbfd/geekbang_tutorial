@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: nginx
+  name: hello-gke-horizontal
 spec:
   scaleTargetRef:
     apiVersion: app/v1
