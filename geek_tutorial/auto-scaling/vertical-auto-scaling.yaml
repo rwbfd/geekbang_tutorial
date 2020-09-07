@@ -4,7 +4,7 @@ metadata:
   name: hello-gke-vpa
 spec:
   targetRef:
-    apiVersion: "app/v1"
+    apiVersion: "apps/v1"
     kind: Deployment
     name: hello-gke
   resourcePolicy:
