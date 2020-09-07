@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: external-ip
+spec:
+ ports:
+ - port: 80
+   protocol: TCP
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+ name: external-api
+subsets:
+ - addresses:
+   - ip: 123.123.123.123
+   - ip: 134.134.134.134
+   ports:
+   - port: 80
