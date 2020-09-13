@@ -7,8 +7,8 @@ spec:
   selector:
     app: hello-apple
   ports:
-  - port: 3000
-    targetPort: 3000
+  - port: 5000
+    targetPort: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,4 +28,4 @@ spec:
       - name: hello-gke
         image: gcr.io/geekbang-gke/hello-apple:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
