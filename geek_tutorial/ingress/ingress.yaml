@@ -11,8 +11,8 @@ spec:
         - path: /apple
           backend:
             serviceName: hello-apple
-            servicePort: 3000
+            servicePort: 5000
         - path: /banana
           backend:
             serviceName: hello-banana
-            servicePort: 3001
+            servicePort: 5000
