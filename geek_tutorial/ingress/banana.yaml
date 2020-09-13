@@ -6,8 +6,8 @@ spec:
   selector:
     app: hello-banana
   ports:
-  - port: 3001
-    targetPort: 3001
+  - port: 5000
+    targetPort: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,4 +27,4 @@ spec:
       - name: hello-banana
         image: gcr.io/geekbang-gke/hello-banana:latest
         ports:
-        - containerPort: 3001
+        - containerPort: 5000
