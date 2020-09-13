@@ -1,0 +1,18 @@
+apiVersion: extensions/v1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /apple
+          backend:
+            serviceName: hello-apple
+            servicePort: 3000
+        - path: /banana
+          backend:
+            serviceName: hello-banana
+            servicePort: 3001
