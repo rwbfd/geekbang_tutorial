@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-apple
+spec:
+  selector:
+    app: hello-apple
+  ports:
+  - port: 3000
+    targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-apple
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-apple
+  template:
+    metadata:
+      labels:
+        app: hello-apple
+    spec:
+      containers:
+      - name: hello-gke
+        image: gcr.io/geekbang-gke/hello-apple:latest
+        ports:
+        - containerPort: 3000

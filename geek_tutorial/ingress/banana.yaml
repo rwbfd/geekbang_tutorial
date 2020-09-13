@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-banana
+spec:
+  selector:
+    app: hello-banana
+  ports:
+  - port: 3001
+    targetPort: 3001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-banana
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-banana
+  template:
+    metadata:
+      labels:
+        app: hello-banana
+    spec:
+      containers:
+      - name: hello-banana
+        image: gcr.io/geekbang-gke/hello-banana:latest
+        ports:
+        - containerPort: 3001
