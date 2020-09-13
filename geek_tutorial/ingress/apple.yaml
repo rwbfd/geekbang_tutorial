@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: hello-apple
 spec:
-  type: LoadBalancer
   selector:
     app: hello-apple
   ports:
