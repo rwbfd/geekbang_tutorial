@@ -24,7 +24,7 @@ spec:
         app: hello-apple
     spec:
       containers:
-      - name: hello-gke
+      - name: hello-apple
         image: gcr.io/geekbang-gke/hello-apple:latest
         ports:
         - containerPort: 5000
