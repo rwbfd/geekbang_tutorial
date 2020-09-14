@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: hello
 spec:
+  type: LoadBalancer
   selector:
     app: hello
   ports:
@@ -14,7 +15,7 @@ kind: Deployment
 metadata:
   name: hello
 spec:
-  replicas: 10
+  replicas: 3
   strategy:
   # indicate which strategy we want for rolling update
     type: RollingUpdate
