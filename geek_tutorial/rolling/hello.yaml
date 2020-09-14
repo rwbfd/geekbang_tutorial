@@ -14,7 +14,13 @@ kind: Deployment
 metadata:
   name: hello
 spec:
-  replicas: 3
+  replicas: 10
+  strategy:
+  # indicate which strategy we want for rolling update
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: hello
@@ -28,3 +34,10 @@ spec:
         image: gcr.io/geekbang-gke/hello:1.0
         ports:
         - containerPort: 5000
+        readinessProbe:
+          httpGet:
+             path: /healths
+             port: 5000
+             initialDelaySeconds: 5
+             periodSeconds: 5
+             successThreshold: 2      
