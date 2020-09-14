@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: probe
-        image: gcr.io/geekbang-gke/hello:latest
+        image: gcr.io/geekbang-gke/probe:latest
         ports:
         - containerPort: 5000
         livenessProbe:
