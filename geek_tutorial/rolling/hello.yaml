@@ -36,8 +36,8 @@ spec:
         - containerPort: 5000
         readinessProbe:
           httpGet:
-             path: /healths
-             port: 5000
-             initialDelaySeconds: 5
-             periodSeconds: 5
-             successThreshold: 2      
+           path: /healths
+           port: 5000
+          timeoutSeconds: 2
+          periodSeconds: 10
+          failureThreshold: 3
