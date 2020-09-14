@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: hello
 spec:
+  type: LoadBalancer
   selector:
     app: hello
   ports:
@@ -15,6 +16,12 @@ metadata:
   name: hello
 spec:
   replicas: 3
+  strategy:
+  # indicate which strategy we want for rolling update
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: hello
@@ -28,3 +35,10 @@ spec:
         image: gcr.io/geekbang-gke/hello:1.0
         ports:
         - containerPort: 5000
+        readinessProbe:
+          httpGet:
+           path: /healths
+           port: 5000
+          timeoutSeconds: 2
+          periodSeconds: 10
+          failureThreshold: 3
