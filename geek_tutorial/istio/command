@@ -18,6 +18,7 @@ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 kubectl get svc istio-ingressgateway -n istio-system
 
+kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
 
 
