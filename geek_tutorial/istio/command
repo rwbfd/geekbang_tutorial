@@ -13,6 +13,8 @@ kubectl get pods -n istio-system
 kubectl label namespace default istio-injection=enabled
 git clone https://github.com/istio/istio.git
 
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 kubectl get svc istio-ingressgateway -n istio-system
 
