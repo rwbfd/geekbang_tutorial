@@ -3,7 +3,8 @@ kind: VirtualService
 metadata:
   name: reviews
 spec:
-  host: reviews
+  hosts: 
+  - reviews
   subsets:
   - name: v1
     labels:
