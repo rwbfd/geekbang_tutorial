@@ -12,7 +12,7 @@ spec:
       connectionPool:
         tcp:
           maxConnections: 100
-    outlierDetection:
-      consecutiveErrors: 7
-      interval: 5m
-      baseEjectionTime: 15m
+      outlierDetection:
+        consecutiveErrors: 7
+        interval: 5m
+        baseEjectionTime: 15m
